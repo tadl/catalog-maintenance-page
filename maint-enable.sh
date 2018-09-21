@@ -4,7 +4,7 @@ TARGET=$1
 
 if [[ -z $TARGET ]]; then
     echo "ERROR: You need to specify an app:"
-    ssh dokku@apps.tadl.org apps
+    ssh dokku@appstwo.tadl.org apps
     exit 0
 fi
 
@@ -13,6 +13,6 @@ if [[ ! -e "tadl-catalog-maintenance.tar" ]]; then
     exit 0
 fi
 
-ssh dokku@apps.tadl.org maintenance:custom-page $TARGET < tadl-catalog-maintenance.tar
+ssh dokku@appstwo.tadl.org maintenance:custom-page $TARGET < tadl-catalog-maintenance.tar
 
-ssh dokku@apps.tadl.org maintenance:on $TARGET
+ssh dokku@appstwo.tadl.org maintenance:on $TARGET
